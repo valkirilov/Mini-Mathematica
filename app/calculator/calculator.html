@@ -1,0 +1,48 @@
+
+<div class="calculator">
+	<div class="row">
+		<div class="input-group">
+	      <input type="text" class="form-control" ng-model="inputField" placeholder="Type here your equation...">
+	      <span class="input-group-btn">
+	        <button class="btn btn-default calc primary" type="button" ng-click="calculate()"><span class="glyphicon glyphicon-arrow-right"></span></button>
+	      </span>
+	    </div><!-- /input-group -->
+	</div>
+
+	<div class="row">
+		<div class="col"><a href="" ng-click="type(7)" class="calc">7</a></div>
+		<div class="col"><a href="" ng-click="type(8)" class="calc">8</a></div>
+		<div class="col"><a href="" ng-click="type(9)" class="calc">9</a></div>
+		<div class="col"><a href="" ng-click="clear()" class="calc primary">C</a></div>
+		<div class="col"><a href="" ng-click="typeSpecial()" class="calc special">pow</a></div>
+		<div class="col"><a href="" ng-click="typeSpecial()" class="calc special">log</a></div>
+	</div>
+	<div class="row">
+		<div class="col"><a href="" ng-click="type(4)" class="calc">4</a></div>
+		<div class="col"><a href="" ng-click="type(5)" class="calc">5</a></div>
+		<div class="col"><a href="" ng-click="type(6)" class="calc">6</a></div>
+		<div class="col"><a href="" ng-click="type(' * ')" class="calc primary">*</a></div>
+		<div class="col"><a href="" ng-click="typeSpecial()" class="calc special">x^2</a></div>
+		<div class="col"><a href="" ng-click="typeSpecial()" class="calc special">sqrt</a></div>
+
+	</div>
+	<div class="row">
+		<div class="col"><a href="" ng-click="type(1)" class="calc">1</a></div>
+		<div class="col"><a href="" ng-click="type(2)" class="calc">2</a></div>
+		<div class="col"><a href="" ng-click="type(3)" class="calc">3</a></div>
+		<div class="col"><a href="" ng-click="type(' / ')" class="calc primary">/</a></div>
+		<div class="col"><a href="" ng-click="typeSpecial()" class="calc special">sin</a></div>
+		<div class="col"><a href="" ng-click="typeSpecial()" class="calc special">cos</a></div>
+	</div>
+	<div class="row">
+		<div class="col"><a href="" ng-click="type(0)" class="calc">0</a></div>
+		<div class="col"><a href="" ng-click="type(' + ')" class="calc primary">+</a></div>
+		<div class="col"><a href="" ng-click="type(' - ')" class="calc primary">-</a></div>
+		<div class="col"><a href="" ng-click="calculate()" class="calc primary">=</a></div>
+		<div class="col"><a href="" ng-click="typeSpecial()" class="calc special">tg</a></div>
+		<div class="col"><a href="" ng-click="typeSpecial()" class="calc special">cotg</a></div>
+	</div>
+</div>
+
+<div class="col-sm-6 history">
+</div>
