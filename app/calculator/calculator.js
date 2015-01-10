@@ -27,21 +27,23 @@ angular.module('myApp.calculator', ['ngRoute'])
 	};
 
 	function evalReversePolishNotationpn(input)  {
-  		var stack,tk,x,y,z;
+  		var stack,
+  			token, 
+  			x, y, z;
 
   		input = input.replace(/^\s*|\s*$/g,'');
   		input = input.length > 0 ? input.split(/\s+/) : [];
   		
   		stack = [];
   		for (var i=0; i < input.length; ++i) {
-    		tk = input[i];
-    		if (/^[+-]?(\.\d+|\d+(\.\d*)?)$/.test(tk)) {
-      			z = parseFloat(tk);
+    		token = input[i];
+    		if (/^[+-]?(\.\d+|\d+(\.\d*)?)$/.test(token)) {
+      			z = parseFloat(token);
       		}
     		else  {
-      			if (tk.length>1 || '+-*/'.indexOf(tk)==-1 || stack.length<2) break;
-      			y = stack.pop();  x = stack.pop()
-      			z = eval(x+tk+' '+y);
+      			if (token.length>1 || '+-*/'.indexOf(token)==-1 || stack.length<2) break;
+      			y = stack.pop();  x = stack.pop();
+      			z = eval(x + token + ' ' +y);
     		}
     		stack.push(z);
   		}
