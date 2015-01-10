@@ -4,9 +4,7 @@ module.exports = function(grunt) {
 	pkg : grunt.file.readJSON('package.json'),
       connect: {
         server: {
-          options: {
-            base: 'app',
-          },
+          options: {},
         }
       },
       sass: {
@@ -15,7 +13,7 @@ module.exports = function(grunt) {
             style: 'compressed'
           },
           files: {
-            'app/styles/app.css': 'app/styles/scss/app.scss',
+            'styles/app.css': 'styles/scss/app.scss',
           }
         }
       },
@@ -26,21 +24,21 @@ module.exports = function(grunt) {
         //   dest: 'app/scripts/directives.js'
         // },
         css: {
-          src: ['app/styles/app.css'],
-          dest: 'app/styles/app.css'
+          src: ['styles/app.css'],
+          dest: 'styles/app.css'
         }
       },
       nggettext_extract: {
           pot: {
               files: {
-                  'app/po/template.pot': ['app/*.html', 'app/*/*.html']
+                  'po/template.pot': ['./*.html', './*/*.html']
               }
           },
       },
       nggettext_compile: {
           all: {
               files: {
-                  'app/translations.js': ['app/po/*.po']
+                  'translations.js': ['po/*.po']
               }
           },
       },
@@ -49,14 +47,14 @@ module.exports = function(grunt) {
           livereload: true,
         },
         html: {
-          files: ['app/index.html', 'app/*/*.html'],
+          files: ['index.html', './*/*.html'],
           tasks: ['nggettext_extract']
         },
         sass: {
           options: {
             livereload: false
           },
-          files: ['app/styles/scss/*.scss'],
+          files: ['styles/scss/*.scss'],
           tasks: ['sass', 'concat:css'],
         },
         css: {
@@ -65,53 +63,7 @@ module.exports = function(grunt) {
         }
         // Watch js for concatenations
       },
-      docular: {
-        docular_webapp_target: "docs",
-        showDocularDocs: true,
-        showAngularDocs: false,
-        groups: [
-          {
-            groupId: "roomico",
-            groupTitle: "Roomico",
-            groupIcon: "icon-book",
-            showSource: true,
-            sections: [
-              {
-                id: "controllers",
-                title: "Controllers",
-                showSource: true,
-                scripts: [
-                  "app/scripts/controllers.js"
-                ],
-              },
-              {
-                id: "services",
-                title: "Services",
-                showSource: true,
-                scripts: [
-                  "app/scripts/services.js"
-                ],
-              },
-              {
-                id: "directives",
-                title: "Dircetives",
-                showSource: true,
-                scripts: [
-                  "app/scripts/directives.js"
-                ],
-              },
-              {
-                id: "filters",
-                title: "Filters",
-                showSource: true,
-                scripts: [
-                  "app/scripts/filters.js"
-                ],
-              }
-            ]
-          }
-        ]
-      }
+      
     });
 
     grunt.loadNpmTasks('grunt-contrib-sass');
@@ -119,7 +71,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-angular-gettext');
-    grunt.loadNpmTasks('grunt-docular');
 
     grunt.registerTask('default', ['connect', 
       'nggettext_extract', 
