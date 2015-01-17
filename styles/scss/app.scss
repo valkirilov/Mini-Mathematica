@@ -85,11 +85,11 @@
 		}
 
 		&.primary {
-			background: #95a5a6;
-			@include box-shadow(0px 5px 0px #7f8c8d);
+			background: #e67e22; /* #95a5a6; */
+			@include box-shadow(0px 5px 0px #d35400); /*#7f8c8d); */
 
 			&:active {
-				@include box-shadow(0px 3px 0px #7f8c8d);
+				@include box-shadow(0px 3px 0px #d35400); /* #7f8c8d); */
 			}
 		}
 

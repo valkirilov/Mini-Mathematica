@@ -7,7 +7,7 @@ angular.module('myApp', [
   'ngAnimate',
 
   'myApp.calculator',
-  'myApp.version',
+  'myApp.services',
 
   //'restangular',
   'ui.bootstrap',
@@ -15,7 +15,7 @@ angular.module('myApp', [
   'gettext',
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.otherwise({redirectTo: '/calculator'});
 }])
 .controller('GlobalController', ['$scope', '$rootScope', '$location', 'gettextCatalog',
   function($scope, $rootScope, $location, gettextCatalog) {
