@@ -107,3 +107,29 @@
 	}
 
 }
+
+.history {
+	ul {
+		li {
+			list-style: none;
+			text-align: left;
+		}
+	}
+}
+
+@media (max-width: 400px) {
+  .calculator {
+    width: 90%;
+
+    .calc {
+		width: 44px;
+		height: 40px;
+	}
+
+	.col {
+		&.right {
+			float: right;
+		}
+	}
+  }
+}

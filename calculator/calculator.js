@@ -12,6 +12,7 @@ angular.module('myApp.calculator', ['ngRoute'])
 .controller('CalculatorCtrl', ['$rootScope', '$scope', '$document', 'CalcService', function($rootScope, $scope, $document, CalcService) {
 
 	$scope.inputField = '';
+  $scope.history = [];
 
   $scope.init = function() {
 
@@ -38,6 +39,12 @@ angular.module('myApp.calculator', ['ngRoute'])
       return;
 
 		var result = CalcService.calculate(input);
+
+    $scope.history.push({
+      expression: input,
+      result: result
+    });
+
 		$scope.inputField = (result === false) ? 'Invalid expression' : result.toString();
     //$scope.$digest();
 	};	
