@@ -1,7 +1,7 @@
 Mini-Mathematica
 ======================
 
-A Course Project for my Structures-of-Data-and-Algorythms course at FMI (Sofia University)
+My Course Project for the Structures-of-Data-and-Algorythms course at FMI (Sofia University)
 
 # Demo
   [http://valkirilov.github.io/Mini-Mathematica/](http://valkirilov.github.io/Mini-Mathematica/)
