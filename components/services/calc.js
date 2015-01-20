@@ -132,6 +132,13 @@ angular.module('myApp.services.calc', [])
 
           var fisrtArgument = stack.pop(),
               secondArgument = stack.pop();
+
+          if (token === '/' && fisrtArgument == 0) {
+            console.error('Cannot divide on zero');
+            errorFound = true;
+            return false;
+          }
+
           stack.push(eval(secondArgument + token + fisrtArgument));
         }
         else if (token === 'pow') {
@@ -153,6 +160,13 @@ angular.module('myApp.services.calc', [])
           }
 
           var fisrtArgument = stack.pop();
+
+          if (token === 'sqrt' && fisrtArgument < 0) {
+            console.error('Cannot sqrt of negative numbers');
+            errorFound = true;
+            return false;
+          }
+
           stack.push(eval('Math.'+token+'('+fisrtArgument+')'));
         }
         else if (token === 'log') {
