@@ -13,6 +13,12 @@ Supports:
 # Demo
   [http://valkirilov.github.io/Mini-Mathematica/](http://valkirilov.github.io/Mini-Mathematica/)
   
+ <p align="center">
+  <a href="http://valkirilov.github.io/Mini-Mathematica/" target="_blank">
+    <img src="https://raw.githubusercontent.com/valkirilov/Mini-Mathematica/gh-pages/images/laptop.png" alt="Screenshot"/>
+  </a>
+</p>
+  
 ## Examples
 
 - 1 + 2 - 3 * 4 / 5 = 0.6000000000000001
